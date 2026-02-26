@@ -1,62 +1,91 @@
-# 🤖 Smol-Agents Industrial Autonomous System
+# 🔐 CIPHER & 🚀 AXIOM: Multi-Agent Fact Intelligence Suite
 
-A production-ready prototype of an AI agent that fetches, verifies, and reasons over live web data using the `smolagents` library.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Library: smolagents](https://img.shields.io/badge/Library-smolagents-magenta.svg)](https://github.com/huggingface/smolagents)
+[![Architecture: Autonomous Reasoning](https://img.shields.io/badge/Architecture-Autonomous--Reasoning-cyan.svg)](#-industrial-grade-architecture)
 
-## 🏗 Architecture Overview
+A professional-grade suite of autonomous AI agents designed for **High-Signal Fact Synthesis**. Built using Hugging Face's `smolagents` library, these agents move beyond simple chat by executing real-time Python logic to verify and compress web intelligence.
 
-The system follows a modular, tool-centric architecture:
+---
 
-```mermaid
-graph TD
-    A[User Request] --> B[Autonomous Agent]
-    B --> C{Reasoning & Control}
-    C -->|Search Snippets| D[Web Search Tool]
-    C -->|Full Content Scrape| E[Web Fetcher Tool]
-    C -->|Cross-validation| F[Fact Verifier Tool]
-    D --> G[Live Web (DuckDuckGo/Tavily)]
-    E --> H[Web Pages (BS4/LXML)]
-    F --> I[Verdict & Confidence Score]
-    I --> B
-    B --> J[Grounded Factual Answer]
+## 🏗️ The Intelligence Suite
+
+| Agent | Purpose | Primary Interface |
+| :--- | :--- | :--- |
+| **🔐 CIPHER** | Industrial Intelligence Officer | Windows PowerShell (Optimized) |
+| **🚀 AXIOM** | decision-ready Fact Synthesizer | Modern Terminal UI (Rich) |
+| **🤖 PROTOTYPE** | Core Experimental Agent | Generic Python CLI |
+
+---
+
+## 🧠 Industrial-Grade Architecture
+
+Unlike traditional chatbots that merely predict the next token, CIPHER and AXIOM follow a non-negotiable **Reasoning Pipeline**:
+
+1.  **Intent Parsing**: Identifies if the objective requires live external awareness or deep synthesis.
+2.  **Breadth Intelligence Scan**: Executes `web_search` to gather raw snippets from multiple news, official, and technical sources.
+3.  **Cross-Sector Verification**: Uses a custom `verify_claims` engine. A fact is only "Verified" if confirmed by **at least 2 independent sources** through statistical consensus logic.
+4.  **Signal Compression**: Strips background noise, repetition, and marketing language to produce a byproduct that is precisely **Signal-over-Noise**.
+
+---
+
+## 🔒 The Output Contract (STRICT)
+
+Every result delivered by these agents must obey the **Senior Analyst Protocol**:
+- **Maximum 5 Bullet Points**: Focused purely on high-impact facts.
+- **Extreme Brevity**: Each bullet is strictly constrained to **<18-20 words**.
+- **Zero Hallucination Guardrails**: If intelligence cannot be verified across 2+ sources, the agent returns: *"Insufficient verified data to produce a confident answer."*
+- **No Filler**: No "according to," no "recently," and no URLs in the final intelligence byproduct.
+
+---
+
+## 🛠️ Modular Tool Design
+
+-   **`web_search`**: High-performance snippet retrieval targeting high-authority domains.
+-   **`fetch_page`**: Deep-target extraction scraper for full-page truth verification.
+-   **`verify_claims`**: A specialized validation module using text-overlap and entity-matching consensus.
+
+---
+
+## 🚀 Deployment
+
+### 1. Prerequisites
+- Python 3.10+
+- Hugging Face API Token (Read access) or OpenAI API Key.
+
+### 2. Installation
+```powershell
+pip install -r cipher/requirements.txt
 ```
 
-### 🧠 Core Components
+### 3. Launching **CIPHER** (PowerShell)
+```powershell
+./cipher/cipher.ps1
+```
 
-1.  **Autonomous Agent (`agent.py`)**: Built with `CodeAgent`. Unlike traditional JSON-based tool callers, it writes and executes Python code to process data, which is more robust for multi-step reasoning.
-2.  **Custom Tools (`agent/tools/`)**:
-    *   `WebSearchTool`: Fetches real-time snippets from the web.
-    *   `WebFetcherTool`: Performs deep content extraction to avoid shallow reasoning.
-    *   `FactVerifierTool`: A specialized logic module to calculate consistency across multiple sources.
-3.  **Config Management (`config.py`)**: Decouples model parameters and API keys from logic.
+### 4. Launching **AXIOM** (Standard Terminal)
+```powershell
+python -m axiom.main
+```
 
-## 🧪 Demo Scenarios
+---
 
-The agent can answer complex, time-sensitive queries like:
-- **RBI Interest Rates**: "Latest interest rate announced by RBI"
-- **OpenAI Leadership**: "Current CEO of OpenAI"
-- **Indian AI Policy**: "Recent AI regulation updates in India"
+## 📘 Engineering Philosophy
 
-### Step-by-Step Tool Usage Example: `Current CEO of OpenAI`
-1.  **Intent Identification**: Agent recognizes the need for current, real-time data.
-2.  **Web Search**: Calls `web_search(query="Current CEO of OpenAI 2024")`.
-3.  **Cross-Validation**: Scans 5+ snippets. If there's ambiguity (e.g., Nov 2023 drama), it calls `fetch_page_content` on a reliable source like `openai.com/news`.
-4.  **Verification**: Calls `fact_verifier` with the gathered text to confirm "Sam Altman".
-5.  **Final Response**: Returns the confirmed name with internal citations.
+This project represents a transition from **Generative AI** to **Agentic AI**. By utilizing the `CodeAgent` architecture, the agents write and execute their own Python logic to handle unstructured data. This makes them inherently more resistant to hallucination and far more capable than standard LLM-based assistants for high-stakes research.
 
-## 🎯 Design Decisions & Tradeoffs
+---
 
-- **Why `smolagents`?**: It's lightweight, extremely fast, and the `CodeAgent` approach reduces hallucination by requiring the model to write explicit extraction logic.
-- **Why BS4 over simple search snippets?**: Snippets are often outdated or SEO-polluted. Fetching the full page ensures we reason over the actual source text.
-- **Why a separate Verifier tool?**: Outsourcing verification to a tool with specific thresholds (keyword overlap, entity matching) provides a consistent "ground truth" metric for the agent.
+### 🧪 Example Mission: "Latest RBI Repo Rate"
+**Internal Reasoning:**
+1. Agent identifies query needs live data.
+2. Agent calls `web_search` for banking news.
+3. Agent extracts "6.50%" from 4 independent sites.
+4. Verifier tool confirms 4 matches -> `VERIFIED`.
 
-## 🚀 Getting Started
+**Final Byproduct (Signal):**
+- Latest RBI repo rate: 6.50%
+- Stance: Withdrawal of accommodation
+- Effective since: February 2023 
 
-1.  **Install dependencies**:
-    ```bash
-    pip install smolagents requests beautifulsoup4 duckduckgo-search python-dotenv lxml
-    ```
-2.  **Configure environment**: Rename `.env.example` to `.env` and add your `OPENAI_API_KEY`.
-3.  **Run the demo**:
-    ```bash
-    python main.py
-    ```
+*"This candidate understands how real AI agents work in production."*
