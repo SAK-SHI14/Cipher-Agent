@@ -1,4 +1,4 @@
-# 🔐 CIPHER & 🚀 AXIOM: Multi-Agent Fact Intelligence Suite
+# 🔐 CIPHER: Multi-Agent Fact Intelligence Suite
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Library: smolagents](https://img.shields.io/badge/Library-smolagents-magenta.svg)](https://github.com/huggingface/smolagents)
