@@ -1,0 +1,8 @@
+smolagents
+rich
+requests
+beautifulsoup4
+duckduckgo-search
+python-dotenv
+lxml
+litellm
